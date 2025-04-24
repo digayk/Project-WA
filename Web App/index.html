@@ -1,13 +1,141 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snack Tracker</title>
+
+</head>
+
+<body>
+  <header>
+    <h1>
+      Snack Tracker
+    </h1>
+    <button type="button" id="dark__mode">Donkere modus</button>
+  </header>
+  <main>
+    <section class="search__section">
+      <input type="text" placeholder="Zoek hier naar recepten...">
+    </section>
+    <section class="filter__section">
+      <div class="dropdown__menu">
+        <a href="#" class="dropdown__dropper">Categorie</a>
+        <div class="dropdown__content">
+          <a href="#">Ontbijt</a>
+          <a href="#">Lunch</a>
+          <a href="#">Maaltijd</a>
+          <a href="#">Snacks</a>
+          <a href="#">Desserten</a>
+        </div>
+      </div>
+
+      <div class="dropdown__menu">
+        <a href="#" class="dropdown__dropper">Keuken</a>
+        <div class="dropdown__content">
+          <a href="#">Nederlands</a>
+          <a href="#">Italiaans</a>
+          <a href="#">Aziatisch</a>
+          <a href="#">Mexicaans</a>
+          <a href="#">Andere</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="submitting__section">
+      <form>
+        <button type="submit">Zoek op</button>
+        <a href="#">Favorieten</a>
+      </form>
+    </section>
+
+    <section class="recepten__section">
+      <h2>Recepten</h2>
+      <div class="dropdown__menu">
+        <p>Sorteren op</p>
+        <div class="dropdown__content">
+          <a href="#">Naam A-Z</a>
+          <a href="#">Naam Z-A</a>
+          <a href="#">Moeilijkheid</a>
+          <a href="#">Bereidingstijd</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid__section">
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+
+
+
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+      <article class="recept">
+        <h3>
+          <a href="#">Titel Recept</a>
+        </h3>
+        <a href="#" class="view">Bekijken</a>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
