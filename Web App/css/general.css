@@ -6,7 +6,10 @@ body {
 
 /* MAIN */
 
-
+h1 {
+    width: 200px;
+    display: flex;
+}
 /* SECTIONS */
 
 #search__section {
@@ -17,13 +20,26 @@ body {
 #filter__section {
     display: flex;
     justify-content: center;
+    gap: 50px;
+    padding: 15px;
 }
-#submitting__section {
+#submitting__section form {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 50px;
+    margin-right: 400px;
+}
+#submitting__section a {
+    text-decoration: none;
 }
 #recepten__section {
     display: flex;
     justify-content: space-between;
 }
 
+
+/* IMAGES */
+
+img {
+    max-width: 100%;
+}

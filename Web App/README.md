@@ -9,5 +9,8 @@ Vervolgens zal ik per onderdeel documenteren wat ik allemaal gedaan heb.
 3. Data & API
 4. Opslag & validatie
 5. Styling & layout
+Ik begin mijn HTML door stilletjes aan te werken, ik denk aan wat ik momenteel nodig heb, codeer het en als er iets mist voeg ik dit toe.
+Voor mijn dark mode toggle ben ik mij gebaseerd op de code in: https://codepen.io/Umer_Farooq/pen/eYJgKGN.
+Voor mijn iconen gebruik ik fontawesome.
 6. Tooling & structuur
 - Project is opgezet met Vite

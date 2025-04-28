@@ -1,0 +1,19 @@
+#search__section {
+    width: auto;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-radius: 28px;
+    background-color: #1a1a1a;
+    border-color: #FF9800;
+}
+
+#section__input {
+    font-size: 16px;
+    color: #333333;
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 300px;
+}

@@ -6,142 +6,164 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="fonts/fontawesome-free/css/all.css">
   <title>Snack Tracker</title>
 
 </head>
 
 <body>
   <div id="page__wrapper">
-  <header>
-    <h1>
-      Snack Tracker
-    </h1>
-    <button type="button" id="dark__mode">Donkere modus</button>
-  </header>
-  <main>
-    <section id="upper__section">
-    <section id="search__section">
-      <input type="text" placeholder="Zoek hier naar recepten...">
-    </section>
-    <section id="filter__section">
-      <div class="dropdown__menu">
-        <a href="#" class="dropdown__dropper">Categorie</a>
-        <div class="dropdown__content">
-          <a href="#">Ontbijt</a>
-          <a href="#">Lunch</a>
-          <a href="#">Maaltijd</a>
-          <a href="#">Snacks</a>
-          <a href="#">Desserten</a>
+    <header>
+      <h1>
+        <a href="index.html"><img src="img/ChatGPT Image 28 avr. 2025, 14_51_21.PNG" alt="logo"></a>
+      </h1>
+      <div id="dark__mode">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox__label">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+          <span class="ball"></span>
+        </label>
+      </div>
+    </header>
+    <main>
+      <section id="upper__section">
+        <section id="search__section">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="search__input" placeholder="Zoek hier naar recepten...">
+        </section>
+        <section id="filter__section">
+          <div class="dropdown__menu">
+            <a href="#" class="dropdown__dropper">Categorie</a>
+            <!-- kleur: #757575 -->
+            <div class="dropdown__content">
+              <a href="#">Ontbijt</a>
+              <a href="#">Lunch</a>
+              <a href="#">Maaltijd</a>
+              <a href="#">Snacks</a>
+              <a href="#">Desserten</a>
+            </div>
+          </div>
+
+          <div class="dropdown__menu">
+            <a href="#" class="dropdown__dropper">Keuken</a>
+            <div class="dropdown__content">
+              <a href="#">Nederlands</a>
+              <a href="#">Italiaans</a>
+              <a href="#">Aziatisch</a>
+              <a href="#">Mexicaans</a>
+              <a href="#">Andere</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="submitting__section">
+          <form>
+            <button type="submit">Zoek op</button>
+            <div id="favorieten__button">
+              <a href="#">Favorieten</a>
+              <!-- Kleur: #F44336 -->
+            </div>
+          </form>
+        </section>
+      </section>
+      <section id="recepten__section">
+        <h2>Recepten</h2>
+        <div class="dropdown__menu">
+          <a href="#" class="dropdown__dropper">Sorteren op</a>
+          <!-- Kleur: 42A5F5 -->
+          <div class="dropdown__content">
+            <a href="#">Naam A-Z</a>
+            <a href="#">Naam Z-A</a>
+            <a href="#">Moeilijkheid</a>
+            <a href="#">Bereidingstijd</a>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div class="dropdown__menu">
-        <a href="#" class="dropdown__dropper">Keuken</a>
-        <div class="dropdown__content">
-          <a href="#">Nederlands</a>
-          <a href="#">Italiaans</a>
-          <a href="#">Aziatisch</a>
-          <a href="#">Mexicaans</a>
-          <a href="#">Andere</a>
-        </div>
-      </div>
-    </section>
+      <section id="grid__section">
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
 
-    <section id="submitting__section">
-      <form>
-        <button type="submit">Zoek op</button>
-        <div id="favorieten__button">
-        <a href="#">Favorieten</a>
-      </div>
-      </form>
-    </section>
-  </section>
-    <section id="recepten__section">
-      <h2>Recepten</h2>
-      <div class="dropdown__menu">
-        <p>Sorteren op</p>
-        <div class="dropdown__content">
-          <a href="#">Naam A-Z</a>
-          <a href="#">Naam Z-A</a>
-          <a href="#">Moeilijkheid</a>
-          <a href="#">Bereidingstijd</a>
-        </div>
-      </div>
-    </section>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
 
-    <section id="grid__section">
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
 
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
 
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
-
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
-
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
 
 
 
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
-      <article class="recept">
-        <h3>
-          <a href="#">Titel Recept</a>
-        </h3>
-        <a href="#" class="view">Bekijken</a>
-      </article>
-    </section>
-  </main>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3>
+            <a href="#">Titel Recept</a>
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+      </section>
+    </main>
 
-  <script type="module" src="/src/main.js"></script>
-</div>
+    <script type="module" src="/src/main.js"></script>
+  </div>
 </body>
 
 </html>
