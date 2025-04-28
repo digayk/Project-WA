@@ -1,3 +1,29 @@
+/* BODY */
+
 body {
     background-color: #FADFBB;
 }
+
+/* MAIN */
+
+
+/* SECTIONS */
+
+#search__section {
+    display: flex;
+    justify-content: center;
+}
+
+#filter__section {
+    display: flex;
+    justify-content: center;
+}
+#submitting__section {
+    display: flex;
+    justify-content: center;
+}
+#recepten__section {
+    display: flex;
+    justify-content: space-between;
+}
+

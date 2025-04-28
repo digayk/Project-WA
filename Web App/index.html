@@ -19,10 +19,11 @@
     <button type="button" id="dark__mode">Donkere modus</button>
   </header>
   <main>
-    <section class="search__section">
+    <section id="upper__section">
+    <section id="search__section">
       <input type="text" placeholder="Zoek hier naar recepten...">
     </section>
-    <section class="filter__section">
+    <section id="filter__section">
       <div class="dropdown__menu">
         <a href="#" class="dropdown__dropper">Categorie</a>
         <div class="dropdown__content">
@@ -46,14 +47,16 @@
       </div>
     </section>
 
-    <section class="submitting__section">
+    <section id="submitting__section">
       <form>
         <button type="submit">Zoek op</button>
+        <div id="favorieten__button">
         <a href="#">Favorieten</a>
+      </div>
       </form>
     </section>
-
-    <section class="recepten__section">
+  </section>
+    <section id="recepten__section">
       <h2>Recepten</h2>
       <div class="dropdown__menu">
         <p>Sorteren op</p>
@@ -66,7 +69,7 @@
       </div>
     </section>
 
-    <section class="grid__section">
+    <section id="grid__section">
       <article class="recept">
         <h3>
           <a href="#">Titel Recept</a>

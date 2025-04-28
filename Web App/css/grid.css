@@ -1,0 +1,14 @@
+#grid__section {
+    width: auto;
+    padding: 20px;
+    margin: 20px 20px;
+}
+
+.recept {
+    display: inline-block;
+    width: 25%;
+    margin: 15px 10px 20px 45px;
+    border: 1px solid;
+    padding: 15px;
+    box-sizing: border-box;
+}
