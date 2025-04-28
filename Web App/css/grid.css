@@ -1,14 +1,19 @@
 #grid__section {
-    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
     padding: 20px;
-    margin: 20px 20px;
+    margin: 20px;
 }
 
 .recept {
-    display: inline-block;
-    width: 25%;
-    margin: 15px 10px 20px 45px;
+    flex: 0 0 27%;
     border: 1px solid;
     padding: 15px;
     box-sizing: border-box;
+}
+
+.recept a {
+    text-decoration: none;
 }
