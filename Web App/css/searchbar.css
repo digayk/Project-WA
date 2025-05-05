@@ -1,19 +1,25 @@
 #search__section {
-    width: auto;
+    width: 500px;
     display: flex;
     align-items: center;
     padding: 14px;
     border-radius: 28px;
-    background-color: #1a1a1a;
-    border-color: #FF9800;
+    background-color: #FFF5E0;
+    border: 2px solid #FFF5E0;
+    box-sizing: border-box;
+    margin: auto;
+}
+#search__section i {
+    color: #8D6E63;
+    font-size: 18px;
 }
 
-#section__input {
+#search__input {
     font-size: 16px;
     color: #333333;
     margin-left: 14px;
     outline: none;
     border: none;
     background: transparent;
-    width: 300px;
+    flex: auto;
 }
