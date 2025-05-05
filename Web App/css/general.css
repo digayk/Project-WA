@@ -17,12 +17,17 @@ h1 {
     justify-content: center;
 }
 
+
 #filter__section {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    width: 100%;
     padding: 15px;
+    margin-top: 10px;
+    gap: 200px;
 }
+
+
 #submitting__section form {
     display: flex;
     justify-content: flex-end;
