@@ -14,3 +14,14 @@ Voor mijn dark mode toggle ben ik mij gebaseerd op de code in: https://codepen.i
 Voor mijn iconen gebruik ik fontawesome.
 6. Tooling & structuur
 - Project is opgezet met Vite
+
+
+
+
+
+
+
+
+
+https://chatgpt.com/share/6818c120-7978-8005-9745-e1372ec97896
+CHATGPT LINK VOOR HET LEREN OVER MODALS

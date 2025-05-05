@@ -1,9 +1,4 @@
-export function setupCounter(element) {
-  let counter = 0
-  const setCounter = (count) => {
-    counter = count
-    element.innerHTML = `count is ${counter}`
-  }
-  element.addEventListener('click', () => setCounter(counter + 1))
-  setCounter(0)
-}
+document.addEventListener('DOMContentLoaded', function() {
+  const overlay = document.getElementById("modal__overlay");
+  console.log("Overlay hidden state:", overlay.classList.contains("hidden")); // Should be true initially
+});
