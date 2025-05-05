@@ -2,13 +2,27 @@
 
 body {
     background-color: #FADFBB;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+a {
+    text-decoration: none;
+}
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* MAIN */
 
 h1 {
     width: 200px;
     display: flex;
+}
+h2 {
+    font-style: italic;
+    margin-left: 97px;
 }
 /* SECTIONS */
 
@@ -34,12 +48,11 @@ h1 {
     gap: 50px;
     margin-right: 400px;
 }
-#submitting__section a {
-    text-decoration: none;
-}
+
 #recepten__section {
     display: flex;
     justify-content: space-between;
+    margin-right: 94px;
 }
 
 
