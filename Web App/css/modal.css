@@ -1,0 +1,27 @@
+dialog {
+    width: 300px;
+    height: 600px;
+    border-radius: 10px;
+}
+
+dialog img {
+    width: 300px;
+    height: 300px;
+}
+dialog h3 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+}
+
+#favorieten__added {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+#favorieten__adder:hover i {
+    color: red;
+    transition: 0.5s;
+}

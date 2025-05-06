@@ -21,3 +21,6 @@
 #favorieten__button a:hover {
     color: #FF4040;
 }
+#favorieten__adder {
+    display: flex;
+}
