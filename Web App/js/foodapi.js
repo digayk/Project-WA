@@ -130,6 +130,44 @@ const fetchCategory = async (category) => {
 }
 
 
+const fetchArea = async (area) => {
+    try {
+        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`);
+        const {meals} = await response.json();
+
+        if(!meals) {
+            alert("Geen gerechten gevonden voor deze keuken!");
+            return;
+        }
+        const grid = document.getElementById("grid__section");
+        grid.innerHTML = "";
+
+        meals.forEach(meal => {
+            const {strMeal, strMealThumb, idMeal} = meal;
+            
+            const article = document.createElement("article");
+            article.classList.add("recept");
+
+            article.innerHTML = `
+            <h3 class="titel">${strMeal}</h3>
+            <img src="${strMealThumb}" alt="${strMeal}">
+            <a href="#" class="view">Bekijken</a>
+            `;
+
+            article.querySelector(".view").addEventListener("click", async (e) => {
+                e.preventDefault();
+                const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`);
+                const data = await response.json();
+                showMealModal(data.meals[0]);
+            })
+            grid.appendChild(article);
+        })
+    }catch (e) {
+        console.error("Fout bij het ophalen van de keuken", e);
+    }
+}
+
+
 const magnifier = document.querySelector(".fa-magnifying-glass");
 magnifier.addEventListener("click", searchMeal);
 
@@ -139,10 +177,18 @@ document.getElementById("search__input").addEventListener("keypress", function(e
     }
 
 });
-document.querySelectorAll(".dropdown__content a").forEach(link => {
+document.querySelectorAll(".dropdown__content.categorie a").forEach(link => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
         const category = link.textContent.trim();
         fetchCategory(category);
     });
 });
+document.querySelectorAll(".dropdown__content.keuken a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const area = link.textContent.trim();
+      fetchArea(area);
+    });
+  });
+  
