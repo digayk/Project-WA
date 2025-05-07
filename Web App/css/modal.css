@@ -1,12 +1,13 @@
 dialog {
-    width: 300px;
+    width: 500px;
     height: 600px;
     border-radius: 10px;
 }
 
 dialog img {
-    width: 300px;
+    width: 400px;
     height: 300px;
+    border-radius: 5px;
 }
 dialog h3 {
     display: flex;

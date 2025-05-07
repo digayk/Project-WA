@@ -79,7 +79,7 @@
 
       <section id="grid__section">
         <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
@@ -87,29 +87,21 @@
         </article>
 
         <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
           <a href="#" class="view">Bekijken</a>
         </article>
         <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
           <a href="#" class="view">Bekijken</a>
         </article>
         <article class="recept">
-          <h3>
-            Titel Recept
-          </h3>
-          <img src="img/tiramisu.jpg" alt="tiramisu">
-          <a href="#" class="view">Bekijken</a>
-        </article>
-
-        <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
@@ -117,7 +109,7 @@
         </article>
 
         <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
@@ -125,7 +117,15 @@
         </article>
 
         <article class="recept">
-          <h3>
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+
+        <article class="recept">
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
@@ -135,21 +135,21 @@
 
 
         <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
           <a href="#" class="view">Bekijken</a>
         </article>
         <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
           <a href="#" class="view">Bekijken</a>
         </article>
         <article class="recept">
-          <h3>
+          <h3 class="titel">
             Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
@@ -157,20 +157,22 @@
         </article>
       </section>
       <dialog data-modal>
-        <h3>
-          Titel recept
+        <h3 class="titel">
+          <span id="titel__modal">Titel recept</span>
           <span id="close__modal" class="close">x</span>
         </h3>
         <img src="img/tiramisu.jpg" alt="tiramisu">
         <div id="favorieten__adder">
           <button type="button" id="favorieten__added"><i class="fa-regular fa-heart"></i> Toevoegen aan favorieten</button>
         </div>
-        <p class="uitleg recept">Hier komt de uitleg over het recept</p>
+        <p class="uitleg__ingredienten">Hier komen de ingredienten</p>
+        <p class="uitleg__recept">Hier komt de uitleg over het recept</p>
       </dialog>
     </main>
-
+    <div id="app"></div>
     <script type="module" src="src/main.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/foodapi.js"></script>
   </div>
 </body>
 

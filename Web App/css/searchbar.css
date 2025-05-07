@@ -12,6 +12,7 @@
 #search__section i {
     color: #8D6E63;
     font-size: 18px;
+    cursor: pointer;
 }
 
 #search__input {

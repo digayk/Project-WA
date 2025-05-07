@@ -25,3 +25,8 @@ Voor mijn iconen gebruik ik fontawesome.
 
 https://chatgpt.com/share/6818c120-7978-8005-9745-e1372ec97896
 CHATGPT LINK VOOR HET LEREN OVER MODALS
+https://www.youtube.com/watch?v=ywtkJkxJsdg
+LINK VIDEO VOOR MODALS
+
+https://chatgpt.com/share/681b1fe9-2e28-8005-bf90-e480bca65808
+CHATGPT LINK VOOR <br> NA NUMERATIES
