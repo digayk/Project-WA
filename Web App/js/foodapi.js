@@ -212,13 +212,13 @@ const setupSorting = () => {
             
                 for (let i = 0; i < 6; i++) {
                     try {
-                        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
-                        const data = await res.json();
+                        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
+                        const data = await response.json();
                         if (data.meals && data.meals.length > 0) {
                             randomMeals.push(data.meals[0]);
                         }
-                    } catch (error) {
-                        console.error("Fout bij het ophalen van willekeurige maaltijd:", error);
+                    } catch (e) {
+                        console.error("Fout bij het ophalen van willekeurige maaltijd:", e);
                     }
                 }
             
@@ -287,3 +287,24 @@ const setupSorting = () => {
         });
         console.log("Meals displayed: ", meals);
     }
+    document.addEventListener("DOMContentLoaded", () => {
+        fetchAllMeals();
+    });
+    
+    function fetchAllMeals() {
+        fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
+            .then(response => response.json())
+            .then(data => {
+                if (data.meals && data.meals.length > 0) {
+                    const firstNine = data.meals.slice(0, 9);
+                    currentMeals = firstNine;
+                    displayMeals(firstNine);
+                } else {
+                    console.warn("Geen recepten gevonden.");
+                }
+            })
+            .catch(e => {
+                console.error("Fout bij het ophalen van recepten:", e);
+            });
+    }
+    
