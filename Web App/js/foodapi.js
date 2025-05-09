@@ -174,7 +174,7 @@ const setupSorting = () => {
         sortLinks[i].addEventListener("click", async (e) => {
             e.preventDefault();
             const sortType = sortLinks[i].textContent.trim();
-            
+
             if (!currentMeals || currentMeals.length === 0) {
                 alert("Geen maaltijden om te sorteren. Zoek of selecteer eerst een categorie.");
                 return;
@@ -184,7 +184,7 @@ const setupSorting = () => {
             for (let i = 0; i < currentMeals.length; i++) {
                 mealsToSort.push(currentMeals[i]);
             }
-            
+
             if (sortType === "Naam A-Z") {
                 for (let j = 0; j < mealsToSort.length - 1; j++) {
                     for (let k = j + 1; k < mealsToSort.length; k++) {
@@ -195,7 +195,7 @@ const setupSorting = () => {
                         }
                     }
                 }
-            } 
+            }
             else if (sortType === "Naam Z-A") {
                 for (let j = 0; j < mealsToSort.length - 1; j++) {
                     for (let k = j + 1; k < mealsToSort.length; k++) {
@@ -206,105 +206,94 @@ const setupSorting = () => {
                         }
                     }
                 }
-            } 
-            else if (sortType === "Random") {
-                const randomMeals = [];
-            
-                for (let i = 0; i < 6; i++) {
-                    try {
-                        const response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
-                        const data = await response.json();
-                        if (data.meals && data.meals.length > 0) {
-                            randomMeals.push(data.meals[0]);
-                        }
-                    } catch (e) {
-                        console.error("Fout bij het ophalen van willekeurige maaltijd:", e);
-                    }
-                }
-            
-                displayMeals(randomMeals);
-                return;
             }
-            
-            
+            else if (sortType === "Random") {
+                // Fisher-Yates shuffle
+                for (let j = mealsToSort.length - 1; j > 0; j--) {
+                    const k = Math.floor(Math.random() * (j + 1));
+                    [mealsToSort[j], mealsToSort[k]] = [mealsToSort[k], mealsToSort[j]];
+                }
+            }
+
+
+
             displayMeals(mealsToSort);
         });
     }
 }
 
-    document.addEventListener("DOMContentLoaded", setupSorting);
+document.addEventListener("DOMContentLoaded", setupSorting);
 
 
 
 
-    const magnifier = document.querySelector(".fa-magnifying-glass");
-    magnifier.addEventListener("click", searchMeal);
+const magnifier = document.querySelector(".fa-magnifying-glass");
+magnifier.addEventListener("click", searchMeal);
 
-    document.getElementById("search__input").addEventListener("keypress", function (e) {
-        if (e.key == "Enter") {
-            searchMeal(e);
-        }
+document.getElementById("search__input").addEventListener("keypress", function (e) {
+    if (e.key == "Enter") {
+        searchMeal(e);
+    }
 
+});
+document.querySelectorAll(".dropdown__content.categorie a").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const category = link.textContent.trim();
+        fetchCategory(category);
     });
-    document.querySelectorAll(".dropdown__content.categorie a").forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const category = link.textContent.trim();
-            fetchCategory(category);
-        });
+});
+document.querySelectorAll(".dropdown__content.keuken a").forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const area = link.textContent.trim();
+        fetchArea(area);
     });
-    document.querySelectorAll(".dropdown__content.keuken a").forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const area = link.textContent.trim();
-            fetchArea(area);
-        });
-    });
-    function displayMeals(meals) {
-        const grid = document.getElementById("grid__section");
-        grid.innerHTML = "";
+});
+function displayMeals(meals) {
+    const grid = document.getElementById("grid__section");
+    grid.innerHTML = "";
 
-        meals.forEach(meal => {
-            const { strMeal, strMealThumb, idMeal } = meal;
+    meals.forEach(meal => {
+        const { strMeal, strMealThumb, idMeal } = meal;
 
-            const article = document.createElement("article");
-            article.classList.add("recept");
+        const article = document.createElement("article");
+        article.classList.add("recept");
 
-            article.innerHTML = `
+        article.innerHTML = `
             <h3 class="titel">${strMeal}</h3>
             <img src="${strMealThumb}" alt="${strMeal}">
             <a href="#" class="view">Bekijken</a>
         `;
 
-            article.querySelector(".view").addEventListener("click", async (e) => {
-                e.preventDefault();
-                const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`);
-                const data = await response.json();
-                showMealModal(data.meals[0]);
-            });
-
-            grid.appendChild(article);
+        article.querySelector(".view").addEventListener("click", async (e) => {
+            e.preventDefault();
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`);
+            const data = await response.json();
+            showMealModal(data.meals[0]);
         });
-        console.log("Meals displayed: ", meals);
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-        fetchAllMeals();
+
+        grid.appendChild(article);
     });
-    
-    function fetchAllMeals() {
-        fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
-            .then(response => response.json())
-            .then(data => {
-                if (data.meals && data.meals.length > 0) {
-                    const firstNine = data.meals.slice(0, 9);
-                    currentMeals = firstNine;
-                    displayMeals(firstNine);
-                } else {
-                    console.warn("Geen recepten gevonden.");
-                }
-            })
-            .catch(e => {
-                console.error("Fout bij het ophalen van recepten:", e);
-            });
-    }
-    
+    console.log("Meals displayed: ", meals);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    fetchAllMeals();
+});
+
+function fetchAllMeals() {
+    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
+        .then(response => response.json())
+        .then(data => {
+            if (data.meals && data.meals.length > 0) {
+                const firstNine = data.meals.slice(0, 9);
+                currentMeals = firstNine;
+                displayMeals(firstNine);
+            } else {
+                console.warn("Geen recepten gevonden.");
+            }
+        })
+        .catch(e => {
+            console.error("Fout bij het ophalen van recepten:", e);
+        });
+}
