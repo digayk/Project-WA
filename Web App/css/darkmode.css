@@ -59,6 +59,9 @@ body.dark, body.dark #page__wrapper, body.dark .view, body.dark dialog, body.dar
     background-color: #111;
     color: #fff;
 }
+body.dark {
+    background-image: none;
+}
 
 body.dark #search__section, body.dark .dropdown__dropper, body.dark .dropdown__content, body.dark #submitting__section #buttons button {
     border: 2px solid #fff;
