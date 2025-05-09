@@ -1,5 +1,10 @@
 let currentMeals = [];
 
+function saveFavorites() {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+}
+
+
 function showMealModal(meal) {
     const titel = document.querySelector(".titel");
     const afbeelding = document.querySelector("[data-modal] img");
@@ -20,6 +25,19 @@ function showMealModal(meal) {
         }
     }
     ingredienten.innerHTML = ingredientenLijst;
+    const favBtn = document.getElementById("favorieten__added");
+    favBtn.onclick = function () {
+        let favorites = JSON.parse(localStorage.getItem("favorieteMaaltijden")) || [];
+
+        const bestaatAl = favorites.some(fav => fav.idMeal == meal.idMeal);
+        if (!bestaatAl) {
+            favorites.push(meal);
+            localStorage.setItem("favorieteMaaltijden", JSON.stringify(favorites));
+            alert(`${meal.strMeal} toegevoegd aan je favorieten! `)
+        } else {
+            alert(`${meal.strMeal} zit al in je favorieten! `)
+        }
+    }
 
     document.querySelector('[data-modal]').showModal();
 }
@@ -46,18 +64,6 @@ const searchMeal = async (e) => {
         article.querySelector(".view").addEventListener("click", (e) => {
             e.preventDefault();
             showMealModal(meal);
-            let ingredientenLijst = "";
-
-
-            for (let i = 1; i <= 20; i++) {
-                const ingredient = meal[`strIngredient${i}`];
-                const measure = meal[`strMeasure${i}`];
-
-                if (ingredient && ingredient.trim()) {
-                    ingredientenLijst += `<li>${measure ? measure : " "} ${ingredient}</li>`;
-                }
-            }
-            ingredienten.innerHTML = ingredientenLijst;
         });
 
 
@@ -175,7 +181,7 @@ const setupSorting = () => {
             e.preventDefault();
             const sortType = sortLinks[i].textContent.trim();
 
-            if (!currentMeals || currentMeals.length === 0) {
+            if (!currentMeals || currentMeals.length == 0) {
                 alert("Geen maaltijden om te sorteren. Zoek of selecteer eerst een categorie.");
                 return;
             }
@@ -185,7 +191,7 @@ const setupSorting = () => {
                 mealsToSort.push(currentMeals[i]);
             }
 
-            if (sortType === "Naam A-Z") {
+            if (sortType == "Naam A-Z") {
                 for (let j = 0; j < mealsToSort.length - 1; j++) {
                     for (let k = j + 1; k < mealsToSort.length; k++) {
                         if (mealsToSort[j].strMeal > mealsToSort[k].strMeal) {
@@ -196,7 +202,7 @@ const setupSorting = () => {
                     }
                 }
             }
-            else if (sortType === "Naam Z-A") {
+            else if (sortType == "Naam Z-A") {
                 for (let j = 0; j < mealsToSort.length - 1; j++) {
                     for (let k = j + 1; k < mealsToSort.length; k++) {
                         if (mealsToSort[j].strMeal < mealsToSort[k].strMeal) {
@@ -207,7 +213,7 @@ const setupSorting = () => {
                     }
                 }
             }
-            else if (sortType === "Random") {
+            else if (sortType == "Random") {
                 // Fisher-Yates shuffle
                 for (let j = mealsToSort.length - 1; j > 0; j--) {
                     const k = Math.floor(Math.random() * (j + 1));
@@ -221,6 +227,60 @@ const setupSorting = () => {
         });
     }
 }
+
+const favorietenBtn = document.querySelector("#favorieten__button a");
+const favorietenDialog = document.getElementById("favorieten__dialog");
+const favorietenLijst = document.getElementById("favorieten__lijst");
+const closeFavorieten = document.getElementById("close__favorieten");
+
+favorietenBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    favorietenLijst.innerHTML = "";
+    let favorites = JSON.parse(localStorage.getItem("favorieteMaaltijden")) || [];
+
+    if (favorites.length == 0) {
+        favorietenLijst.innerHTML = "<p>Geen favorieten toegevoegd.</p>";
+    } else {
+        favorites.forEach(meal => {
+            const div = document.createElement("div");
+            div.classList.add("favoriet__item");
+            div.innerHTML = `
+            <h4>${meal.strMeal}</h4>
+            <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+            <div class="btn__group">
+            <a href="#" class="view__fav" data-id="${meal.idMeal}">Bekijken</a>
+            <button class="delete__fav" data-id="${meal.idMeal}">
+            <i class="fa-regular fa-trash-can"></i>
+            </button>  
+            </div> 
+       `;
+            favorietenLijst.appendChild(div);
+        })
+        document.querySelectorAll(".view__fav").forEach(button => {
+            button.addEventListener("click", (e) => {
+                const id = e.target.getAttribute("data-id");
+                const meal = favorites.find(fav => fav.idMeal == id);
+                if (meal) {
+                    favorietenDialog.close();
+                    showMealModal(meal);
+                }
+            });
+        });
+        document.querySelectorAll(".delete__fav").forEach(button => {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                const id = button.getAttribute("data-id");
+                favorites = favorites.filter(fav => fav.idMeal !== id);
+                localStorage.setItem("favorieteMaaltijden", JSON.stringify(favorites));
+                favorietenBtn.click();
+            })
+        })
+    }
+    favorietenDialog.showModal();
+});
+closeFavorieten.addEventListener("click", () => {
+    favorietenDialog.close();
+});
 
 document.addEventListener("DOMContentLoaded", setupSorting);
 
@@ -297,3 +357,27 @@ function fetchAllMeals() {
             console.error("Fout bij het ophalen van recepten:", e);
         });
 }
+
+
+async function fetchRandomMeals(count = 6) {
+    const randomMeals = [];
+
+    for (let i = 0; i < count; i++) {
+        try {
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/random.php`);
+            const data = await response.json();
+            if (data.meals && data.meals.length > 0) {
+                randomMeals.push(data.meals[0]);
+            }
+        } catch (e) {
+            console.error("Fout bij het ophalen van willekeurige maaltijd:", e);
+        }
+    }
+
+    currentMeals = randomMeals;
+    displayMeals(randomMeals);
+}
+
+document.getElementById("random__button").addEventListener("click", () => {
+    fetchRandomMeals();
+});

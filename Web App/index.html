@@ -57,12 +57,12 @@
         </section>
       </section>
       <section id="submitting__section">
-        <form>
-          <button type="submit">Zoek op</button>
+        <div id="buttons">
+          <button type="button" id="random__button">Random</button>
           <div id="favorieten__button">
             <a href="#"><i class="fa-regular fa-heart"></i> Favorieten</a>
           </div>
-        </form>
+        </div>
       </section>
       <section id="recepten__section">
         <h2>Recepten</h2>
@@ -166,6 +166,10 @@
         </div>
         <p class="uitleg__ingredienten">Hier komen de ingredienten</p>
         <p class="uitleg__recept">Hier komt de uitleg over het recept</p>
+      </dialog>
+      <dialog id="favorieten__dialog">
+        <h3>Favorieten <span id="close__favorieten" class="close">x</span></h3>
+        <div id="favorieten__lijst"></div>
       </dialog>
     </main>
     <div id="app"></div>

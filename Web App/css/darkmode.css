@@ -55,12 +55,12 @@
     
 }
 
-body.dark, body.dark #page__wrapper, body.dark .view, body.dark dialog, body.dark #favorieten__added, body.dark #favorieten__button, body.dark #search__section, body.dark #search__section i, body.dark #search__input::placeholder, body.dark #search__input, body.dark .dropdown__menu, body.dark .dropdown__menu a, body.dark .dropdown__menu a, body.dark .dropdown__dropper, body.dark .dropdown__content, body.dark .dropdown__content a {
+body.dark, body.dark #page__wrapper, body.dark .view, body.dark dialog, body.dark #favorieten__added, body.dark #favorieten__button, body.dark #search__section, body.dark #search__section i, body.dark #search__input::placeholder, body.dark #search__input, body.dark .dropdown__menu, body.dark .dropdown__menu a, body.dark .dropdown__menu a, body.dark .dropdown__dropper, body.dark .dropdown__content, body.dark .dropdown__content a, body.dark #submitting__section #buttons button, body.dark #favorieten__button a:hover, body.dark .view__fav, body.dark .btn__group button {
     background-color: #111;
     color: #fff;
 }
 
-body.dark #search__section, body.dark .dropdown__dropper, body.dark .dropdown__content {
+body.dark #search__section, body.dark .dropdown__dropper, body.dark .dropdown__content, body.dark #submitting__section #buttons button {
     border: 2px solid #fff;
 }
 body.dark .dropdown__content a {
@@ -69,4 +69,7 @@ body.dark .dropdown__content a {
 
 body.dark .dropdown__content a:hover {
     background-color: #1a1a1a;
+}
+body.dark #favorieten__button:hover {
+    border: 2px solid #fff;
 }

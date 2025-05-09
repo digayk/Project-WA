@@ -1,4 +1,4 @@
-#submitting__section form button {
+#submitting__section #buttons button {
     border-radius: 5px;
     padding: 10px;
     width: 100px;
@@ -10,7 +10,7 @@
     transition: 0.4s;
 }
 
-#submitting__section form button:hover {
+#submitting__section #buttons button:hover {
     background-color: #fff;
     color: #ff9c0c;
     border: 3px solid #ff9c0c;

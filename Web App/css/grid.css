@@ -14,10 +14,10 @@
     padding: 15px;
     box-sizing: border-box;
 }
-.recept a {
+.recept a, .view__fav {
     color: #111;
 }
-.recept a:hover {
+.recept a:hover, .view__fav:hover {
     text-decoration: underline;
     font-style: italic;
     font-size: 18px;

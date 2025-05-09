@@ -1,7 +1,7 @@
 /* BODY */
 
 body {
-    background-color: #FADFBB;
+    background-image: url(../img/istockphoto-1307964333-612x612.jpg);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 a {
@@ -19,6 +19,7 @@ header {
 h1 {
     width: 200px;
     display: flex;
+    margin-left: 15px;
 }
 h2 {
     font-style: italic;
@@ -42,7 +43,7 @@ h2 {
 }
 
 
-#submitting__section form {
+#submitting__section #buttons {
     display: flex;
     justify-content: flex-end;
     gap: 50px;
