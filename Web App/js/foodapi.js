@@ -214,7 +214,6 @@ const setupSorting = () => {
                 }
             }
             else if (sortType == "Random") {
-                // Fisher-Yates shuffle
                 for (let j = mealsToSort.length - 1; j > 0; j--) {
                     const k = Math.floor(Math.random() * (j + 1));
                     [mealsToSort[j], mealsToSort[k]] = [mealsToSort[k], mealsToSort[j]];
@@ -346,7 +345,7 @@ function fetchAllMeals() {
         .then(response => response.json())
         .then(data => {
             if (data.meals && data.meals.length > 0) {
-                const firstNine = data.meals.slice(0, 9);
+                const firstNine = data.meals.slice(0, 20);
                 currentMeals = firstNine;
                 displayMeals(firstNine);
             } else {
