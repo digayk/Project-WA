@@ -1,8 +1,9 @@
+/* Dark mode toggle styles */
 #dark__mode {
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end;
-    margin: 10px;
+    margin: 1rem;
     align-items: center;
 }
 
@@ -10,13 +11,14 @@
     opacity: 0;
     position: absolute;
 }
+
 .checkbox__label {
-    background-color: #111;
-    width: 65px;
-    height: 26px;
-    border-radius: 30px;
+    background-color: var(--dark-bg);
+    width: 6.5rem;
+    height: 2.6rem;
+    border-radius: 3rem;
     position: relative;
-    padding: 10px;
+    padding: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -28,51 +30,57 @@
 }
 
 .fa-moon, .fa-sun {
-    font-size: 22px;
-}
-
-
-.fa-moon {
-    color: #f1c40f; 
-}
-.fa-sun {
-    color: #f39c12;
+    font-size: 2.2rem;
 }
 
 .checkbox__label .ball {
-    background-color: #fff;
-    width: 40px;
-    height: 40px;
+    background-color: var(--text-light);
+    width: 4rem;
+    height: 4rem;
     position: absolute;
-    left: 3px;
-    top: 3px;
+    left: 0.3rem;
+    top: 0.3rem;
     border-radius: 50%;
     transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .checkbox__label .ball {
-    transform: translateX(38px);
-    
+    transform: translateX(3.8rem);
 }
 
-body.dark, body.dark #page__wrapper, body.dark .view, body.dark dialog, body.dark #favorieten__added, body.dark #favorieten__button, body.dark #search__section, body.dark #search__section i, body.dark #search__input::placeholder, body.dark #search__input, body.dark .dropdown__menu, body.dark .dropdown__menu a, body.dark .dropdown__menu a, body.dark .dropdown__dropper, body.dark .dropdown__content, body.dark .dropdown__content a, body.dark #submitting__section #buttons button, body.dark #favorieten__button a:hover, body.dark .view__fav, body.dark .btn__group button {
-    background-color: #111;
-    color: #fff;
-}
-body.dark {
+/* Dark theme styles */
+
+html.dark {
     background-image: none;
+    background-color: var(--dark-bg);
 }
 
-body.dark #search__section, body.dark .dropdown__dropper, body.dark .dropdown__content, body.dark #submitting__section #buttons button {
-    border: 2px solid #fff;
+body.dark, body.dark #page__wrapper, body.dark .view, body.dark dialog, 
+body.dark #favorieten__added, body.dark #favorieten__button, 
+body.dark #search__section, body.dark #search__section i, 
+body.dark #search__input::placeholder, body.dark #search__input, 
+body.dark .dropdown__menu, body.dark .dropdown__menu a, 
+body.dark .dropdown__dropper, body.dark .dropdown__content, 
+body.dark .dropdown__content a, body.dark #submitting__section #buttons button, 
+body.dark #favorieten__button a:hover, body.dark .view__fav, 
+body.dark .btn__group button {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
 }
+
+body.dark #search__section, body.dark .dropdown__dropper, 
+body.dark .dropdown__content, body.dark #submitting__section #buttons button {
+    border: 0.2rem solid var(--text-light);
+}
+
 body.dark .dropdown__content a {
-    border: 1px solid #fff;
+    border: 0.1rem solid var(--text-light);
 }
 
 body.dark .dropdown__content a:hover {
     background-color: #1a1a1a;
 }
+
 body.dark #favorieten__button:hover {
-    border: 2px solid #fff;
+    border: 0.2rem solid var(--text-light);
 }

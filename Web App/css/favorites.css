@@ -1,26 +1,70 @@
+/* Favorites button styles */
 #favorieten__button {
-    background-color: #FF4040;
-    border-radius: 5px;
-    border: 3px solid #fff;
+    background-color: var(--primary-color);
+    border-radius: 0.5rem;
+    border: 0.3rem solid var(--text-light);
     transition: 0.4s;
 }
 
 #favorieten__button:hover {
-    background-color: #fff;
-    border: 3px solid #FF4040;
-    font-size: 16px;
+    background-color: var(--text-light);
+    border: 0.3rem solid var(--primary-color);
+    font-size: 1rem;
     font-weight: bold;
 }
 
 #favorieten__button a {
     display: block;
-    color: #fff;
-    padding: 10px;
+    color: var(--text-light);
+    padding: 1rem;
 }
 
 #favorieten__button a:hover {
-    color: #FF4040;
+    color: var(--primary-color);
 }
+
 #favorieten__adder {
     display: flex;
+}
+
+/* Responsive */
+
+@media (max-width: 70rem) {
+    #favorieten__button {
+        margin: 0 auto; 
+        width: 90%; 
+    }
+    
+    #favorieten__button a {
+        padding: 0.8rem; 
+        font-size: 1.4rem; 
+    }
+}
+
+/* Mobile (400px) */
+@media (max-width: 40rem) {
+    #favorieten__button {
+        width: 80%; 
+        order: 1; 
+        margin-top: 1rem;
+    }
+    
+    #favorieten__button a {
+        justify-content: center; 
+    }
+    
+    /* Favorieten dialog aanpassingen */
+    #favorieten__dialog {
+        width: 95vw; 
+        max-height: 80vh; 
+    }
+    
+    .favoriet__item {
+        flex-direction: column; 
+    }
+    
+    .btn__group {
+        flex-direction: row; 
+        justify-content: center;
+    }
 }

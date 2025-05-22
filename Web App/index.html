@@ -1,182 +1,183 @@
-  <!doctype html>
-  <html lang="en">
+<!doctype html>
+<html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="fonts/fontawesome-free/css/all.css">
-    <title>Snack Tracker</title>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="fonts/fontawesome-free/css/all.css">
+  <title>Snack Tracker</title>
 
-  </head>
+</head>
 
-  <body>
-    <div id="page__wrapper">
-      <header>
-        <h1>
-          <a href="index.html"><img src="img/ChatGPT Image 28 avr. 2025, 14_51_21.PNG" alt="logo"></a>
-        </h1>
-        <div id="dark__mode">
-          <input type="checkbox" class="checkbox" id="checkbox">
-          <label for="checkbox" class="checkbox__label">
-            <i class="fa-solid fa-sun"></i>
-            <i class="fa-solid fa-moon"></i>
-            <span class="ball"></span>
-          </label>
-        </div>
-      </header>
-      <main>
-        <section id="upper__section">
-          <section id="search__section">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" id="search__input" placeholder="Zoek hier naar recepten...">
-          </section>
-          <section id="filter__section">
-            <div class="dropdown__menu">
-              <a href="#" class="dropdown__dropper">Categorie <i class="fa-solid fa-chevron-down"></i></a>
-              <div class="dropdown__content categorie">
-                <a href="#">Breakfast</a>
-                <a href="#">Starter</a>
-                <a href="#">Vegetarian</a>
-                <a href="#">Seafood</a>
-                <a href="#">Dessert</a>
-              </div>
-            </div>
-
-            <div class="dropdown__menu">
-              <a href="#" class="dropdown__dropper">Keuken <i class="fa-solid fa-chevron-down"></i></a>
-              <div class="dropdown__content keuken">
-                <a href="#">Italian</a>
-                <a href="#">Mexican</a>
-                <a href="#">Japanese</a>
-                <a href="#">French</a>
-                <a href="#">Greek</a>
-              </div>
-            </div>
-          </section>
+<body>
+  <div id="page__wrapper">
+    <header>
+      <h1>
+        <a href="index.html"><img src="img/ChatGPT Image 28 avr. 2025, 14_51_21.PNG" alt="logo"></a>
+      </h1>
+      <div id="dark__mode">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox__label">
+          <i class="fa-solid fa-sun"></i>
+          <i class="fa-solid fa-moon"></i>
+          <span class="ball"></span>
+        </label>
+      </div>
+    </header>
+    <main>
+      <section id="upper__section">
+        <section id="search__section">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="search__input" placeholder="Zoek hier naar recepten...">
         </section>
-        <section id="submitting__section">
-          <div id="buttons">
-            <button type="button" id="random__button">Random</button>
-            <div id="favorieten__button">
-              <a href="#"><i class="fa-regular fa-heart"></i> Favorieten</a>
-            </div>
-          </div>
-        </section>
-        <section id="recepten__section">
-          <h2>Recepten</h2>
+        <section id="filter__section">
           <div class="dropdown__menu">
-            <a href="#" class="dropdown__dropper">Sorteren op <i class="fa-solid fa-chevron-down"></i></a>
-            <div class="dropdown__content">
-              <a href="#" data-sort="asc">Naam A-Z</a>
-              <a href="#" data-sort="desc">Naam Z-A</a>
-              <a href="#">Random</a>
+            <a href="#" class="dropdown__dropper">Categorie <i class="fa-solid fa-chevron-down"></i></a>
+            <div class="dropdown__content categorie">
+              <a href="#">Breakfast</a>
+              <a href="#">Starter</a>
+              <a href="#">Vegetarian</a>
+              <a href="#">Seafood</a>
+              <a href="#">Dessert</a>
+            </div>
+          </div>
+
+          <div class="dropdown__menu">
+            <a href="#" class="dropdown__dropper">Keuken <i class="fa-solid fa-chevron-down"></i></a>
+            <div class="dropdown__content keuken">
+              <a href="#">Italian</a>
+              <a href="#">Mexican</a>
+              <a href="#">Japanese</a>
+              <a href="#">French</a>
+              <a href="#">Greek</a>
             </div>
           </div>
         </section>
+      </section>
+      <section id="submitting__section">
+        <div id="buttons">
+          <button type="button" id="random__button">Random</button>
+          <div id="favorieten__button">
+            <a href="#"><i class="fa-regular fa-heart"></i> Favorieten</a>
+          </div>
+        </div>
+      </section>
+      <section id="recepten__section">
+        <h2>Recepten</h2>
+        <div class="dropdown__menu">
+          <a href="#" class="dropdown__dropper">Sorteren op <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="dropdown__content">
+            <a href="#" data-sort="asc">Naam A-Z</a>
+            <a href="#" data-sort="desc">Naam Z-A</a>
+            <a href="#">Random</a>
+          </div>
+        </div>
+      </section>
 
-        <section id="grid__section">
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-
-
-
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-          <article class="recept">
-            <h3 class="titel">
-              Titel Recept
-            </h3>
-            <img src="img/tiramisu.jpg" alt="tiramisu">
-            <a href="#" class="view">Bekijken</a>
-          </article>
-        </section>
-        <dialog data-modal>
+      <section id="grid__section">
+        <article class="recept">
           <h3 class="titel">
-            <span id="titel__modal">Titel recept</span>
-            <span id="close__modal" class="close">x</span>
+            Titel Recept
           </h3>
           <img src="img/tiramisu.jpg" alt="tiramisu">
-          <div id="favorieten__adder">
-            <button type="button" id="favorieten__added"><i class="fa-regular fa-heart"></i> Toevoegen aan favorieten</button>
-          </div>
-          <p class="uitleg__ingredienten">Hier komen de ingredienten</p>
-          <p class="uitleg__recept">Hier komt de uitleg over het recept</p>
-        </dialog>
-        <dialog id="favorieten__dialog">
-          <h3>Favorieten <span id="close__favorieten" class="close">x</span></h3>
-          <div id="favorieten__lijst"></div>
-        </dialog>
-      </main>
-      <div id="app"></div>
-      <script src="js/modal.js"></script>
-      <script src="js/foodapi.js"></script>
-      <script src="js/darkmode.js"></script>
-    </div>
-  </body>
+          <a href="#" class="view">Bekijken</a>
+        </article>
 
-  </html>
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+
+
+
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+        <article class="recept">
+          <h3 class="titel">
+            Titel Recept
+          </h3>
+          <img src="img/tiramisu.jpg" alt="tiramisu">
+          <a href="#" class="view">Bekijken</a>
+        </article>
+      </section>
+      <dialog data-modal>
+        <h3 class="titel">
+          <span id="titel__modal">Titel recept</span>
+          <span id="close__modal" class="close">x</span>
+        </h3>
+        <img src="img/tiramisu.jpg" alt="tiramisu">
+        <div id="favorieten__adder">
+          <button type="button" id="favorieten__added"><i class="fa-regular fa-heart"></i> Toevoegen aan
+            favorieten</button>
+        </div>
+        <p class="uitleg__ingredienten">Hier komen de ingredienten</p>
+        <p class="uitleg__recept">Hier komt de uitleg over het recept</p>
+      </dialog>
+      <dialog id="favorieten__dialog">
+        <h3>Favorieten <span id="close__favorieten" class="close">x</span></h3>
+        <div id="favorieten__lijst"></div>
+      </dialog>
+    </main>
+    <div id="app"></div>
+    <script src="js/modal.js"></script>
+    <script src="js/foodapi.js"></script>
+    <script src="js/darkmode.js"></script>
+  </div>
+</body>
+
+</html>

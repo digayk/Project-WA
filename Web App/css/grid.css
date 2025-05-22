@@ -1,24 +1,44 @@
+/* Recipe grid layout */
 #grid__section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    padding: 20px;
-    margin: 20px;
+    gap: 4rem;
+    padding: 2rem;
+    margin: 2rem;
 }
 
 .recept {
     flex: 0 0 27%;
-    border: 1px solid;
-    border-radius: 5px;
-    padding: 15px;
+    border: 0.1rem solid;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
     box-sizing: border-box;
 }
+
 .recept a, .view__fav {
-    color: #111;
+    color: var(--dark-bg);
 }
+
 .recept a:hover, .view__fav:hover {
     text-decoration: underline;
     font-style: italic;
-    font-size: 18px;
+    font-size: 1.8rem;
 }
+
+/* responsive */
+@media (max-width: 700px) {
+    #grid__section {
+      gap: 2rem;
+      padding: 1rem;
+    }
+    .recept {
+      flex: 0 0 40%; 
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .recept {
+      flex: 0 0 90%; 
+    }
+  }

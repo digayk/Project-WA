@@ -1,18 +1,41 @@
+/* Search button styles */
 #submitting__section #buttons button {
-    border-radius: 5px;
-    padding: 10px;
-    width: 100px;
-    background-color: #ff9c0c;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 10rem;
+    background-color: var(--secondary-color);
     border: none;
-    color: #fff;
+    color: var(--text-light);
     font-weight: bold;
     cursor: pointer;
     transition: 0.4s;
 }
 
 #submitting__section #buttons button:hover {
-    background-color: #fff;
-    color: #ff9c0c;
-    border: 3px solid #ff9c0c;
-    font-size: 16px;
+    background-color: var(--text-light);
+    color: var(--secondary-color);
+    border: 0.3rem solid var(--secondary-color);
+    font-size: 1.6rem;
+}
+
+/* Responsive */
+
+@media (max-width: 70rem) { /* 700px */
+    #submitting__section #buttons {
+        justify-content: center; 
+        margin-right: 0;         
+        gap: 3rem;          
+    }
+}
+@media (max-width: 40rem) { /* 400px */
+    #submitting__section #buttons {
+        flex-direction: column;  
+        align-items: center;     
+        gap: 1.5rem;         
+    }
+    
+    #submitting__section #buttons button {
+        width: 80%;       
+        padding: 1.2rem;     
+    }
 }

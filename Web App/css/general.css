@@ -1,13 +1,33 @@
+/* VARIABLES */
+:root {
+    --primary-color: #FF4040;      
+    --secondary-color: #ff9c0c;     
+    --light-bg: #FFF5E0;            
+    --dark-bg: #111;                
+    --text-light: #fff;            
+    --text-dark: #333;             
+    --border-color: #8D6E63;
+  }
+
+
+
+
 /* BODY */
 
-body {
+/* Set background image and font styles for the entire page */
+html {
     background-image: url(../img/istockphoto-1307964333-612x612.jpg);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 70%;
 }
+
+/* Remove underline from all links */
 a {
     text-decoration: none;
 }
+
 /* HEADER */
+/* Flex layout for header with space between elements */
 header {
     display: flex;
     justify-content: space-between;
@@ -16,23 +36,28 @@ header {
 
 /* MAIN */
 
+/* Style for h1 elements with fixed width and margin */
 h1 {
-    width: 200px;
+    width: 20rem;
     display: flex;
-    margin-left: 15px;
+    margin-left: 1.5rem;
 }
+
+/* Italic style for h2 with specific margin */
 h2 {
     font-style: italic;
     margin-left: 97px;
 }
+
 /* SECTIONS */
 
+/* Center the search section */
 #search__section {
     display: flex;
     justify-content: center;
 }
 
-
+/* Style for filter section with padding, margin and gap between elements */
 #filter__section {
     display: flex;
     justify-content: center;
@@ -42,7 +67,7 @@ h2 {
     gap: 200px;
 }
 
-
+/* Style for buttons in submitting section - aligned to right with gap */
 #submitting__section #buttons {
     display: flex;
     justify-content: flex-end;
@@ -50,6 +75,7 @@ h2 {
     margin-right: 400px;
 }
 
+/* Style for recepten section with space between elements and right margin */
 #recepten__section {
     display: flex;
     justify-content: space-between;
@@ -59,6 +85,21 @@ h2 {
 
 /* IMAGES */
 
+/* Ensure images don't exceed their container width */
 img {
     max-width: 100%;
 }
+
+  
+  /* Responsive */
+  @media (max-width: 700px) {
+    html {
+      font-size: 56.25%; 
+    }
+  }
+  
+  @media (max-width: 400px) {
+    html {
+      font-size: 50%;
+    }
+  }
